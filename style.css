@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(black, #38073b);
+    font-family: 'Acme', sans-serif;
+}
+
+.paralax{
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    padding: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.paralax::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#c4c2c3,transparent );
+    z-index: 1000;
+}
+.paralax img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#text{
+    position: absolute;
+    font-size: 3vw; /* Ukuran font responsif */
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 3px 3px 10px grey;
+    bottom: 100px; /* Menyesuaikan posisi vertical */
+    width: 90%; /* Lebar teks */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.paralax img#metorid{
+    z-index: 100;
+}
+
+#button{
+    position: absolute;
+    font-size: 1em;
+    color: black;
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    transform: translateY(30px);
+    bottom: -100px;
+}
+.description{
+    position: relative;
+    padding: 10em;
+    background-color: #c4c2c3;
+}
+
+.description p{
+    font-size: 1.1em;
+}
+
+/* Untuk perangkat dengan lebar layar <= 768px, seperti tablet dan mobile */
+@media only screen and (max-width: 768px) {
+    .paralax {
+        padding: 150px 0;
+        height: 150vh; /* Mengubah tinggi sesuai kebutuhan */
+    }
+
+    .paralax #text {
+        font-size: 2.5em;
+        bottom: -50px;
+    }
+
+    .description {
+        padding: 5em 2em; /* Ubah sesuai kebutuhan */
+    }
+
+    .description p {
+        font-size: 1em;
+    }
+}
+
+/* Untuk perangkat dengan lebar layar antara 768px dan 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .paralax {
+        padding: 200px;
+        height: 180vh; /* Mengubah tinggi sesuai kebutuhan */
+    }
+
+    .paralax #text {
+        font-size: 3em;
+        bottom: -75px;
+    }
+
+    .description {
+        padding: 7em; /* Ubah sesuai kebutuhan */
+    }
+}
+
+.container{
+    position: relative;
+    min-height: 30vh;
+    background-color: #c4c2c3;
+}
+
+.container h2{
+    color: black;
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.container .video-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.video {
+    position: relative;
+}
+
+.video-text {
+    position: absolute;
+    bottom: 10px; /* Sesuaikan posisi teks di bagian bawah video */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Menambahkan latar belakang semi-transparan */
+    padding: 5px 10px; /* Sesuaikan padding sesuai kebutuhan */
+}
+
+.container .video-container .video{
+    height: 250px;
+    width: 350px;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.7);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.container .video-container .video video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.container .video-container .video:hover video{
+    transform: scale(1.1);
+}
+
+.container .popup-video{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,.8);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.container .popup-video video{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    border-radius: 5px;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+.container .popup-video span{
+    position: absolute;
+    top: 5px; right: 20px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+    z-index: 100;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+    .container .popup-video video{
+        width: 95%;
+    }
+}
+
+footer {
+    background-color: #f8f9fa; /* Warna latar belakang footer */
+    padding: 20px; /* Sesuaikan padding sesuai kebutuhan */
+    text-align: center; /* Teks berada di tengah */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Lebar footer menyesuaikan lebar layar */
+    background-color: #c4c2c3;
+}
